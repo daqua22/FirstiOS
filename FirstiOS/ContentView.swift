@@ -9,15 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 20, content: greetings)
+        VStack{
+            pegs(colors: [.red, .red, .yellow, .green])
+           
+            
         }
     }
+}
 
-@ViewBuilder
-func greetings() -> TupleView<(Text, Text, Image)>{
-    Text("greetings!!!!")
-    Text("Hellooo!!!")
-    Image(systemName: "globe")
+func pegs(colors: Array<Color>) -> some View {
+        HStack{
+            Circle().foregroundStyle(Color.red)
+            Circle().foregroundStyle(Color.red)
+            Circle().foregroundStyle(Color.yellow)
+            Circle().foregroundStyle(Color.green)
+    }
 }
 
 #Preview {
